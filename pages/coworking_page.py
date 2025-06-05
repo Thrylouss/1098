@@ -6,7 +6,8 @@ class CoworkingPage:
     def __init__(self, driver):
         self.driver = driver
         self.second_branch = (By.CSS_SELECTOR, "#dialog > div > div > div.material-dialog__window-container > div.material-dialog__window-body > div > div.container.coworking__page-dialog-follow-container > div.coworking__page-dialog-follow-branch > div:nth-child(2) > div.list-tile.coworking__page-dialog-follow-branch-item-list > div.list-tile__trailing")
-        self.choose_btn = (By.CSS_SELECTOR, "#dialog > div.material-dialog.coworking__branch-dialog > div > div.material-dialog__window-actions > button:nth-child(2)")
+        self.choose_btn = (By.CSS_SELECTOR, "#dialog > div.material-dialog.coworking__branch-dialog > div > div.material-dialog__window-container > div.material-dialog__window-body > div > div > div:nth-child(1) > div.list-tile__trailing > button")
+        self.next_btn = (By.CSS_SELECTOR, "#dialog > div.material-dialog.coworking__branch-dialog > div > div.material-dialog__window-actions > button:nth-child(2)")
         self.second_date = (By.CSS_SELECTOR, "#dialog > div > div > div.material-dialog__window-container > div.material-dialog__window-body > div > div.container.coworking__page-dialog-follow-container > div.coworking__page-dialog-follow-date > div > div:nth-child(4) > button")
         self.choose_group = (By.CSS_SELECTOR, "#dialog > div > div > div.material-dialog__window-container > div.material-dialog__window-body > div > div.container.coworking__page-dialog-follow-container > div.list-tile.coworking__page-dialog-follow-list")
         self.choose_radio_btn_group = (By.CSS_SELECTOR, "#dialog > div:nth-child(2) > div > div.material-dialog__window-container > div.material-dialog__window-body > div > div > div > div.list-tile__trailing > button")
@@ -26,7 +27,7 @@ class CoworkingPage:
 
     def click_choose_btn(self):
         wait = WebDriverWait(self.driver, 10)
-        wait.until(EC.element_to_be_clickable(self.choose_btn)).click()
+        wait.until(EC.presence_of_element_located(self.choose_btn)).click()
 
     def click_second_date(self):
         wait = WebDriverWait(self.driver, 10)
@@ -43,6 +44,10 @@ class CoworkingPage:
     def click_choose_group_btn(self):
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.element_to_be_clickable(self.choose_group_btn)).click()
+
+    def click_next_btn(self):
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.element_to_be_clickable(self.next_btn)).click()
 
     def click_choose_time(self):
         wait = WebDriverWait(self.driver, 10)
