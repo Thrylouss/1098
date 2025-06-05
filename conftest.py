@@ -11,7 +11,6 @@ def driver_chrome():
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")
     driver = webdriver.Chrome(options=options)
-    driver.maximize_window()
     driver.get("https://my.proweb.uz/log-in")
 
     yield driver
