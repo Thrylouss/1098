@@ -9,3 +9,5 @@ def driver_chrome():
 
 
     yield driver
+
+    driver.quit()
