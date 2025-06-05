@@ -1,9 +1,13 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 
 @pytest.fixture
 def driver_chrome():
-    driver = webdriver.Chrome()
+    options = Options()
+    options.add_argument("--window-size=1920,1080")
+    driver = webdriver.Chrome(options=options)
     driver.maximize_window()
     driver.get("https://my.proweb.uz/log-in")
 
