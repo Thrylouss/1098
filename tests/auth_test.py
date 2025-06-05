@@ -33,6 +33,7 @@ def test_login_success(driver_chrome):
     time.sleep(2)
     coworking_page.click_choose_group_btn()
     coworking_page.click_choose_time()
+    time.sleep(2)
     coworking_page.click_first_element()
     coworking_page.click_second_element()
     coworking_page.click_choose_time_btn()
