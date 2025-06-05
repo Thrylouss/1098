@@ -22,7 +22,7 @@ class AuthPage:
     def click_next_btn(self):
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.element_to_be_clickable(self.next_btn)).click()
-
+awerheah
     def click_dropdown(self):
         wait = WebDriverWait(self.driver, 3)
         wait.until(EC.element_to_be_clickable(self.dropdown)).click()
